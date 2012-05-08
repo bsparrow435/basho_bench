@@ -244,10 +244,10 @@ run({query_mr2, N}, KeyGen, _ValueGen, State) ->
       }
     "],
     case json_post(URL, Body) of
-        {ok, Results} when length(Results) == N ->
-            {ok, State};
+        %{ok, Results} when length(Results) == N ->
+            %{ok, State};
         {ok, Results} ->
-            io:format("Not enough results for query_mr: ~p/~p/~p~n", [StartKey, EndKey, Results]),
+            %io:format("Not enough results for query_mr: ~p/~p/~p~n", [StartKey, EndKey, Results]),
             {ok, State};
         {error, Reason} ->
             io:format("[~s:~p] ERROR - Reason: ~p~n", [?MODULE, ?LINE, Reason]),
